@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  background-color: rgb(68, 63, 71);
+  font-family: "UBOLD";
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.app {
+  color: rgb(216, 216, 216);
+  padding: 0px 10px;
+  overflow-y: hidden;
+  z-index: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.display-holder {
+  height: 90vh;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 70px;
+  padding-left: 100px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+
+.pwd-line {
+  margin-left: 120px;
+}
+
+.sidebar {
+  position: fixed;
+  left: 20px;
+  top: 70px;
+  height: 80vh;
+  width: 80px;
+  background: rgb(56, 52, 58);
+  border-radius: 5px;
+}
+
+.lines-holder {
+  height: 100%;
+}
+
+.app-title-bar {
+  -webkit-app-region: drag;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(56, 52, 58);
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.arrow {
+  padding-right: 5px;
+  color: rgb(255, 55, 255);
+}
+
+.inputLine {
+  width: 100%;
+  border: none;
+  padding: 5px;
+  letter-spacing: 1px;
+  /* border-bottom: 4px solid rgb(56, 52, 58); */
+  font-size: 12px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  caret-color: rgb(49, 45, 51);
+}
+
+.history-lines {
+  background-color: rgb(49, 45, 51);
+  border-radius: 3px;
+  height: 100%;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.inputLine:focus {
+  outline-width: 0;
+}
+
+.inputLineHolder {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.ticker {
+  color: rgb(255, 55, 255);
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.ticker.passive {
+  color: rgb(255, 55, 255);
+}
+
+.ticker.active {
+  color: rgb(255, 255, 255);
+  animation: flickerAnimation 1s infinite;
+}
+
+.inputLine.passive {
+  background-color: rgb(49, 45, 51);
+}
+
+.inputLine.active {
+  animation: inputAnimation 1s infinite;
+}
+
+@font-face {
+  font-family: "UBOLD";
+  src: url("../src/fonts/RobotoMono-Medium.ttf");
+}
+
+@keyframes flickerAnimation {
+  0%   { color: rgb(255, 55, 255); }
+  50%  { color: rgb(255, 255, 255); }
+  100% { color: rgb(255, 55, 255); }
+}
+
+@keyframes inputAnimation {
+  0%   { background-color: rgb(49, 45, 51); }
+  50%  { background-color: rgb(43, 41, 46); }
+  100% { background-color: rgb(49, 45, 51); }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgb(56, 52, 58); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: white; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(131, 131, 131); 
+}
